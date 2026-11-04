@@ -1617,7 +1617,7 @@ if editTgts == 0:
             if coordsRefine.shape[0] <= 1:
                 log("WARNING: Group of points only contains 1 point. Using default target selection instead...")
                 pointRefine = 0
-    elif targetPattern and not alignToP and navInfo[4] == 1:        # if targetPattern and nav item is polygon
+    elif targetPattern and not alignToP and navSize > 0 and navInfo[4] == 1: # if targetPattern and nav item is polygon (navInfo only exists with a Navigator item)
         usePolygon = sem.YesNoBox("\n".join(["POLYGON?", "", "The selected navigator item is a polygon. Do you want to fill it with a grid of points based on the beam diameter?"]))
         if usePolygon == 1:
             if sem.ReportIfNavOpen() < 2:
