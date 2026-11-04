@@ -1110,8 +1110,7 @@ sem.SaveNavigator()
 sem.SuppressReports()
 if beamTiltComp:                                                                                # check if there is a calibration saved, throws error if not
     sem.ReportComaVsISmatrix()
-if tgtPattern:                                                                                  # initialize in case tgts file contains values
-    vecA0 = vecA1 = vecB0 = vecB1 = size = None
+vecA0 = vecA1 = vecB0 = vecB1 = size = None                                                  # initialize in case tgts file contains values (also when tgtPattern itself comes from the tgts file)
 
 ### Find target file
 sem.ReportNavItem()
