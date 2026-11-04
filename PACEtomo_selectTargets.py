@@ -83,7 +83,7 @@ def parseTargets(targetFile):
         if line.startswith("_set") and len(col) == 4:
             settings[col[1]] = col[3]
         elif line.startswith("_bset") and len(col) == 4:
-            val = True if col[3].lower() in ["true", "yes", "y", "on"] else False
+            val = True if col[3].lower() in ["1", "true", "yes", "y", "on"] else False   # the README documents 1 or 0
             settings[col[1]] = val
         elif line.startswith("_spos"):
             resume["sec"] = int(col[2].split(",")[0])

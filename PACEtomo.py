@@ -239,7 +239,7 @@ def parseTargets(file_path):
                 log(f"WARNING: Attempted to overwrite {col[1]} but variable does not exist!")
         elif line.startswith("_bset") and len(col) == 4:
             if col[1] in globals():
-                val = True if col[3].lower() in ["true", "yes", "y", "on"] else False
+                val = True if col[3].lower() in ["1", "true", "yes", "y", "on"] else False   # the README documents 1 or 0
                 log(f"WARNING: Read setting from tgts file and overwrite: {col[1]} = {val}")
                 globals()[col[1]] = val
             else:
